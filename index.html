@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+    <title>Testing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="assets/css/reset.css">  -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+    <script src="assets/javascript/game.js"></script>
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Jedi Fight Club</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wide">
+        <div class="col-xs-3"><hr></div>
+        <div id="theforce" class="col-xs-6">The Farce be with you</div>
+        <div class="col-xs-3"><hr></div>
+    </div>
+
+    <section id="selection">
+        <span class="h2">Selections</span>
+        <div id="chooser" class="chooser">
+        </div>
+    </section>
+
+    <section class="playerzone">
+        <span class="h2">The contender</span>
+        <div id="myplayer">
+        </div>
+    </section>
+
+    <section class="defenderzone">
+        <span class="h2">The defender</span>
+        <div id="myenemy">
+        </div>
+    </section>
+
+    <section class="bystanders">
+        <span class="h2">The onlookers</span>
+        <div id="audience">
+        </div>
+    </section>
+
+    <section class="vanquishedzone">
+        <div id="defeated">
+        </div>
+    </section>
+            
+    <div id="messagearea" class="col-sm-6">Message Zone</div>
+
+    </body>
+
+<script>
+	"use strict";
+	
+	var items=document.getElementsByClassName("item");
+
+	Array.from( items ).forEach( function( item ) {
+		console.log( item );
+		item.addEventListener("click", function() {
+			console.log( this );
+		});
+	});
+
+</script>
+</html>

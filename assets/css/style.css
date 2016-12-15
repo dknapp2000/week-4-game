@@ -1,0 +1,99 @@
+
+secti on {
+    border: 1px solid #777;
+} 
+
+.row {
+    height: 200px
+}
+
+.row-1 {
+    margin-top: 50px;
+}
+
+.wide {
+    margin-bottom: 75px;
+}
+body {
+    width: 900px;
+	box-sizing: border-box;
+    margin: auto;
+    background: url("../images/deathstar_disk.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#theforce {
+	text-align: center;
+    font-size: 20pt;
+    font-family: 'Russo One', sans-serif;
+    margin-top:
+}
+
+.navbar-brand {
+    font-size: 20pt;
+    font-family: 'Russo One', sans-serif;
+}
+
+.characterimg {
+/*    height: 180px;*/
+}
+
+.charactername {
+    position:  absolute;
+    left: 0px;
+    top: 66px;
+    width: 115px;
+    text-align: center;
+    background-color: brown;
+    color: white;
+}
+
+.character {
+    position: relative;  /* makes positioning the charactername possible */
+}
+
+.character img {
+    height: 115px;
+    width: 115px;
+    padding: 1px;
+}
+
+#chooser {
+    height: 170px;
+    padding-top: 5px;
+    width: 70%;
+}
+
+section {
+    height: 190px;
+    width: 100%
+}
+/*
+#section1 {
+    margin: 30px;
+    margin-top: 60px;
+}
+*/
+
+#messagearea {
+    position: fixed;
+    top: 700px;
+    width: 100%;
+    text-align: center;
+}
+
+#scoreboard img{
+    position: fixed;
+    height: 110px;
+    width: 200px;
+    top: 130px;
+    left: 700px
+}
+
+.h2 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 16pt;
+}
