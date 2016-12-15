@@ -69,7 +69,8 @@ body {
 
 section {
     height: 190px;
-    width: 100%
+    width: 100%;
+    position: relative;
 }
 /*
 #section1 {
@@ -97,3 +98,14 @@ section {
     font-family: 'Russo One', sans-serif;
     font-size: 16pt;
 }
+
+.stats {
+    position: relative;
+    left: 150px;
+    top: -110px;
+    opacity: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
