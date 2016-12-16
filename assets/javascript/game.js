@@ -10,6 +10,7 @@ var players = [ [ "0", "Darth Honeydew", "assets/images/Bunsen.jpeg" ],
 var p = [];
 var myPlayerID;
 var myEnemyID;
+var roundOver = false;
 
 function Fighter (pId, pName, pImg) {
     this.id = pId;
@@ -19,17 +20,24 @@ function Fighter (pId, pName, pImg) {
     this.attack = Math.floor(Math.random() * 60) + 50;
     this.html = '<span id="' + pId + '" class="character"><img src="' + pImg + '"><span class="charactername">' + pName + '</span></span>';
     this.take_damage = function ( pFrom, pPoints ) {
+        if ( roundOver ) { return }
         this.health -= pPoints;
         console.log( pFrom );
         console.log( pFrom.name + " inflicted damage of " + pPoints + " on" + this.name + "!" );
-        if ( this.health < 0 ) { this.health = 0 }
+        if ( this.health <= 0 ) { 
+            this.health = 0;
+            roundOver = true;
+        }
     },
     this.update_display = function() {
         var $stats = $("#" + this.id ).parent().next("span");
-//        console.log( $stats );
         $stats.find(".name").text( this.name );
         $stats.find(".health").text( this.health);
         $stats.find(".strength").text( this.attack);
+    },
+    this.newRound = function() {
+        this.health = Math.floor(Math.random() * 200) + 100;
+        this.attack = Math.floor(Math.random() * 60) + 50;
     }
 }
 
@@ -68,9 +76,8 @@ function chosenEnemy(  ) {
     $("#myenemy").append( $("#" + myEnemyID).remove() );
     $(".chooser .character").off("click");
     $("#audience").append( $(".chooser .character").remove() );
-    console.log( "Aminmee" );
-    $("#selection").animate( { height: "0px", opacity: 0} );
-    $(".stats").animate( { opacity: 1});
+    $("#selection").animate( { height: "0px", opacity: 0}, 1200 );
+    $(".stats").animate( { opacity: 1}, 1000);
     $("#" + myPlayerID).click( attack );
     p[myPlayerID].update_display();
     p[myEnemyID].update_display();
@@ -83,5 +90,7 @@ function attack() {
     p[myPlayerID].update_display();
     p[myEnemyID].update_display();
 }
+
+
 
 
