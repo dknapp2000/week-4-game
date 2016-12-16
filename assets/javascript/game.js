@@ -22,6 +22,7 @@ function Fighter (pId, pName, pImg) {
         this.health -= pPoints;
         console.log( pFrom );
         console.log( pFrom.name + " inflicted damage of " + pPoints + " on" + this.name + "!" );
+        if ( this.health < 0 ) { this.health = 0 }
     },
     this.update_display = function() {
         var $stats = $("#" + this.id ).parent().next("span");
