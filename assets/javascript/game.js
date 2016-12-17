@@ -4,8 +4,8 @@
 var players = [ [ "0", "Darth Honeydew", "assets/images/Bunsen.jpeg" ],
                 [ "1", "Darth Tats", "assets/images/darth_toast.jpg" ],
                 [ "2", "Darth Toast", "assets/images/darth_skull.jpg" ],
-                // [ "3", "Darth Dad", "assets/images/darth_dad.jpg" ],
-                // [ "4", "Dark Helmet", "assets/images/dark_helmet.jpg" ]
+                [ "3", "Darth Dad", "assets/images/darth_dad.jpg" ],
+                [ "4", "Dark Helmet", "assets/images/dark_helmet.jpg" ]
               ];
 var p = [];
 var myPlayerID;
@@ -17,7 +17,7 @@ function Game() {
     this.maxRounds = players.length;
     this.gameOver = false;
     this.roundOver = false;
-    this.attackIncrement = 0;
+    this.attackIncrement = 10;
     this.round = 1;
     showVanquished();
     hideDefender();
