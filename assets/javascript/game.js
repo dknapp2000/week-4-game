@@ -17,7 +17,7 @@ function Game() {
     this.maxRounds = players.length;
     this.gameOver = false;
     this.roundOver = false;
-    this.attackIncrement = 6;
+    this.attackIncrement = 3;
     this.round = 1;
     showVanquished();
     hideDefender();
@@ -28,7 +28,12 @@ function Fighter (pId, pName, pImg) {
     this.name = pName;
     this.img = pImg;
     this.whiteHat = false;
-    this.html = '<span id="' + pId + '" class="character"><img src="' + pImg + '"><span class="charactername">' + pName + '</span></span>';
+    this.reset = function() {
+        this.health = Math.floor(Math.random() * 200) + 100;
+        this.attack = Math.floor(Math.random() * 15) + 10;
+    };
+    this.reset();
+    this.html = '<span id="' + pId + '" class="character"><img src="' + pImg + '"><span class="charactername">' + pName + '</span><span class="playerstats">H=' + this.health + '<br>S=' + this.attack + '</span></span>';
     this.take_damage = function ( pGame, pFrom, pPoints ) {
         if ( pGame.roundOver ) { return }
         this.health -= pPoints;
@@ -46,13 +51,7 @@ function Fighter (pId, pName, pImg) {
         $stats.find(".name").text( this.name );
         $stats.find(".health").text( this.health);
         $stats.find(".strength").text( this.attack);
-    },
-
-    this.reset = function() {
-        this.health = Math.floor(Math.random() * 200) + 100;
-        this.attack = Math.floor(Math.random() * 15) + 10;
-    },
-    this.reset();
+    }
 }
 
 window.onload = function () {
@@ -95,6 +94,7 @@ function chosenOne( selection ) {
             chosenEnemy();
         });
     }
+    $("#myplayer span").off("click");  // Unclick the champ
     message( "Now, choose your oponent.")
 
 }
@@ -182,7 +182,7 @@ function gameWon() {
     $("#selection").animate( { height: "0px", opacity: 0}, 700 );
     $(".defenderzone").animate( { height: "0px", opacity: 0}, 700 );
     message("<h1>You WON!</h1>Refresh to try again.")
-    message("<button id='again'>Press this bad boy to play again</button>");
+    messageAppend("<button id='again'>Press this bad boy to play again</button>");
     $("#again").on("click", playAgain );
 }
 
@@ -196,8 +196,10 @@ function gameLost() {
     console.log( "Game over." );
     $("#selection").animate( { height: "0px", opacity: 0}, 700 );
     // $(".defenderzone").animate( { height: "0px", opacity: 0}, 700 );
-    message("<h1>You Lost!</h1>Refresh to try again.");
+    message("<h1>You Lost!</h1><br>");
+    messageAppend("<br><button id='again'>Press this bad boy to play again</button>");
     $("#" + p[myPlayerID].id).animate( { opacity: 0 }, 4000 );
+    $("#again").on("click", playAgain );
 }
 
 function showOnlookers() {

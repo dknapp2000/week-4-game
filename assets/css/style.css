@@ -51,6 +51,21 @@ body {
     color: white;
 }
 
+.playerstats {
+    position:  absolute;
+    left: 0px;
+    top: -15px;
+    width: 115px;
+    text-align: center;
+    background-color: white;
+    color: #888;
+    font-size: 14pt;
+    opacity: 0;
+}
+
+#chooser .character .playerstats:hover {
+    opacity: .75;
+}
 .character {
     position: relative;  /* makes positioning the charactername possible */
 }
@@ -81,8 +96,8 @@ section {
 
 #messagearea {
     position: fixed;
-    bottom: 0px;
-    right: 0px;
+    bottom: 5px;
+    right: 5px;
     width: 100%;
     text-align: center;
     border: 2px solid black;
