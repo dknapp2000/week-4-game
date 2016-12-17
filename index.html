@@ -63,25 +63,18 @@
     </section>
 
     <section class="vanquishedzone">
+        <span class="h2">The vanquished</span>
         <div id="defeated">
         </div>
     </section>
             
-    <div id="messagearea" class="col-sm-6">Message Zone</div>
+    <div id="messagearea" class="col-sm-6">
+        <h2>::: Score board :::</h2>
+        <p>Round: <span id="round">1</span></p>
+        <p><span id="message">Welcome to the fight.</span></p>
+    </div>
 
     </body>
 
-<script>
-	"use strict";
-	
-	var items=document.getElementsByClassName("item");
 
-	Array.from( items ).forEach( function( item ) {
-		console.log( item );
-		item.addEventListener("click", function() {
-			console.log( this );
-		});
-	});
-
-</script>
 </html>

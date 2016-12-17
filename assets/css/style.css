@@ -81,11 +81,22 @@ section {
 
 #messagearea {
     position: fixed;
-    top: 700px;
+    bottom: 0px;
+    right: 0px;
     width: 100%;
     text-align: center;
+    border: 2px solid black;
+    height: 300px;
+    width: 360px;
+    text-align: center;
+    font-size: 14pt;
+    font-family: 'Russo One', sans-serif;
 }
 
+#messagearea p {
+    text-align: left;
+
+}
 #scoreboard img{
     position: fixed;
     height: 110px;
