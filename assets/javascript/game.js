@@ -17,7 +17,7 @@ function Game() {
     this.maxRounds = players.length;
     this.gameOver = false;
     this.roundOver = false;
-    this.attackIncrement = 10;
+    this.attackIncrement = 6;
     this.round = 1;
     showVanquished();
     hideDefender();
