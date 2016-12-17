@@ -32,9 +32,8 @@ function Fighter (pId, pName, pImg) {
     this.take_damage = function ( pGame, pFrom, pPoints ) {
         if ( pGame.roundOver ) { return }
         this.health -= pPoints;
-        console.log( pFrom.name + " inflicted damage of " + pPoints + " on " + this.name + "!" );
         messageAppend( pFrom.name + " inflicted damage of " + pPoints + " on " + this.name + "!" );
-        messageAppend( "Healt is now: " + this.health );
+        // messageAppend( "<br>Health is now: " + this.health );
         if ( this.health <= 0 ) { 
             this.health = 0;
             pGame.roundOver = true;
@@ -183,6 +182,13 @@ function gameWon() {
     $("#selection").animate( { height: "0px", opacity: 0}, 700 );
     $(".defenderzone").animate( { height: "0px", opacity: 0}, 700 );
     message("<h1>You WON!</h1>Refresh to try again.")
+    message("<button id='again'>Press this bad boy to play again</button>");
+    $("#again").on("click", playAgain );
+}
+
+function playAgain() {
+    $("#again").off("click");
+    location.reload();
 }
 
 function gameLost() {
