@@ -181,7 +181,7 @@ function gameWon() {
     $(".character").off("click");
     console.log( "Game over." );
     $("#selection").animate( { height: "0px", opacity: 0}, 700 );
-    // $(".defenderzone").animate( { height: "0px", opacity: 0}, 700 );
+    $(".defenderzone").animate( { height: "0px", opacity: 0}, 700 );
     message("<h1>You WON!</h1>Refresh to try again.")
 }
 
