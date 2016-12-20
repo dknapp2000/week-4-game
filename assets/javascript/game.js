@@ -38,7 +38,6 @@ function Fighter (pId, pName, pImg) {
         if ( pGame.roundOver ) { return }
         this.health -= pPoints;
         messageAppend( pFrom.name + " inflicted damage of " + pPoints + " on " + this.name + "!" );
-        // messageAppend( "<br>Health is now: " + this.health );
         if ( this.health <= 0 ) { 
             this.health = 0;
             pGame.roundOver = true;
@@ -67,11 +66,12 @@ window.onload = function () {
         p.push( t );
         $("#chooser").append( t.html )
         $("#" + p[i].id ).click( function() {
-            console.log( this );
             myPlayerID = $(this).attr("id");
             chosenOne( this.getAttribute( "id" ) );
         } );
     }
+
+    $("#resetbtn").on("click", playAgain );
 };
 
 function newRound() {
@@ -79,7 +79,7 @@ function newRound() {
     game.roundOver = false;
 }
 
-function chosenOne( selection ) {
+function chosenOne( ) {
     console.log( "My player id is " + myPlayerID );
     
     p[myPlayerID].whiteHat = true;
@@ -181,7 +181,7 @@ function gameWon() {
     console.log( "Game over." );
     $("#selection").animate( { height: "0px", opacity: 0}, 700 );
     $(".defenderzone").animate( { height: "0px", opacity: 0}, 700 );
-    message("<h1>You WON!</h1>Refresh to try again.")
+    message("<h1>You WON!</h1>")
     messageAppend("<button id='again'>Press this bad boy to play again</button>");
     $("#again").on("click", playAgain );
 }

@@ -37,15 +37,20 @@ body {
     font-family: 'Russo One', sans-serif;
 }
 
-.characterimg {
-/*    height: 180px;*/
+#resetbtn {
+    margin-top: 7px;
+    border-radius: 7px;
+    background-color: azure;
+    height: 35px;
+    float: right;
+    margin-right: 20px;
 }
 
 .charactername {
     position:  absolute;
-    left: 0px;
+    left: 1px;
     top: 66px;
-    width: 115px;
+    width: 113px;
     text-align: center;
     background-color: brown;
     color: white;
@@ -57,10 +62,16 @@ body {
     top: -15px;
     width: 115px;
     text-align: center;
-    background-color: white;
-    color: #888;
     font-size: 14pt;
     opacity: 0;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5b99df+20,7fb8e7+50,5b99df+80&0+0,0.8+15,1+19,1+81,0.8+85,0+100 */
+    background: -moz-linear-gradient(left, rgba(91,153,223,0) 0%, rgba(91,153,223,0.8) 15%, rgba(91,153,223,1) 19%, rgba(91,153,223,1) 20%, rgba(127,184,231,1) 50%, rgba(91,153,223,1) 80%, rgba(91,153,223,1) 81%, rgba(91,153,223,0.8) 85%, rgba(91,153,223,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(91,153,223,0) 0%,rgba(91,153,223,0.8) 15%,rgba(91,153,223,1) 19%,rgba(91,153,223,1) 20%,rgba(127,184,231,1) 50%,rgba(91,153,223,1) 80%,rgba(91,153,223,1) 81%,rgba(91,153,223,0.8) 85%,rgba(91,153,223,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(91,153,223,0) 0%,rgba(91,153,223,0.8) 15%,rgba(91,153,223,1) 19%,rgba(91,153,223,1) 20%,rgba(127,184,231,1) 50%,rgba(91,153,223,1) 80%,rgba(91,153,223,1) 81%,rgba(91,153,223,0.8) 85%,rgba(91,153,223,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005b99df', endColorstr='#005b99df',GradientType=1 ); /* IE6-9 */
+
+
 }
 
 #chooser .character .playerstats:hover {
@@ -95,6 +106,8 @@ section {
 */
 
 #messagearea {
+    background-color: azure;
+    opacity: .5;
     position: fixed;
     bottom: 5px;
     right: 5px;
@@ -106,12 +119,22 @@ section {
     text-align: center;
     font-size: 14pt;
     font-family: 'Russo One', sans-serif;
+    border-radius: 10px;
 }
 
-#messagearea p {
+#messagearea p,
+#messagearea h1,
+#messagearea h2 {
     text-align: left;
+    opacity: 1;
+    z-index: 10;
 
 }
+
+#messagearea h2 {
+    text-align: center;
+}
+
 #scoreboard img{
     position: fixed;
     height: 110px;
